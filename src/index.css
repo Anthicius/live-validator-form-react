@@ -1,54 +1,117 @@
 .form-container {
   max-width: 400px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 2rem auto;
+  padding: 2.5rem;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  border: 1px solid #e2e8f0;
 }
+
+h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
 
 .input-group {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  gap: 1.25rem;
 }
 
 .input-group label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #334155;
+  color: #475569;
 }
 
+
 .input-group input {
-  padding: 0.75rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
   font-size: 1rem;
+  color: #1e293b;
+  background-color: #f8fafc;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+
+.input-group input:focus {
+  background-color: white;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+
+.input-group input.input-error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.input-group input.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
 }
 
 .error-msg {
   color: #ef4444;
-  font-size: 0.85rem;
-  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  margin: 0;
+  font-weight: 500;
+  animation: slideDown 0.2s ease-out;
 }
+
 
 button.submit-btn {
   background-color: #2563eb;
   color: white;
-  padding: 0.8rem;
+  padding: 0.9rem;
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+button.submit-btn:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px -1px rgba(37, 99, 235, 0.3);
 }
 
 button.submit-btn:disabled {
   background-color: #94a3b8;
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
